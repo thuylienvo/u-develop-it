@@ -8,32 +8,27 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+
 // Connect to database
 const db = mysql.createConnection(
-    {
-      host: 'localhost',
-      // Your MySQL username,
-      user: 'root',
-      // Your MySQL password
-      password: 'Rymi505$MML?!475^2H2bs',
-      database: 'election'
-    },
-    console.log('Connected to the election database.')
-  );
+  {
+    host: 'localhost',
+    // Your MySQL username,
+    user: 'root',
+    // Your MySQL password
+    password: 'Rymi505$MML?!475^2H2bs',
+    database: 'election'
+  },
+  console.log('Connected to the election database.')
+);
 
-  db.query(`SELECT * FROM candidates`, (err, rows) => {
-    console.log(rows);
-  });
+db.query(`SELECT * FROM candidates`, (err, rows) => {
+  console.log(rows);
+});
 
 // Default response for any other request (Not Found)
 app.use((req, res) => {
   res.status(404).end();
-});
-
-app.get('/', (req, res) => {
-  res.json({
-    message: 'Hello World'
-  });
 });
 
 app.listen(PORT, () => {
