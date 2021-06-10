@@ -2,7 +2,11 @@
   "name": "u-develop-it",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5"
+  },
   "scripts": {
     "test": "jest",
     "start": "node server.js"
@@ -19,10 +23,6 @@
     "url": "https://github.com/thuylienvo/u-develop-it/issues"
   },
   "homepage": "https://github.com/thuylienvo/u-develop-it#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "mysql2": "^2.2.5"
-  },
   "devDependencies": {
     "jest": "^27.0.3"
   }
